@@ -482,8 +482,9 @@ input[type="text"]:focus, textarea:focus { border-color: var(--gold); box-shadow
 .toast {
   position: fixed;
   left: 50%;
-  bottom: calc(156px + var(--safe-b));
+  top: calc(var(--safe-t) + clamp(118px, 17vh, 160px) + 52px);
   transform: translateX(-50%);
+  pointer-events: none;
   z-index: 12;
   max-width: min(460px, calc(100vw - 28px));
   padding: 12px 20px;
@@ -548,7 +549,7 @@ input[type="text"]:focus, textarea:focus { border-color: var(--gold); box-shadow
     bottom: calc(142px + var(--safe-b)) !important;
     width: auto;
   }
-  .toast { bottom: calc(144px + var(--safe-b)); border-radius: 20px; }
+  .toast { top: calc(var(--safe-t) + 190px); border-radius: 20px; }
 }
 
 @media (max-width: 380px) {
@@ -571,7 +572,7 @@ input[type="text"]:focus, textarea:focus { border-color: var(--gold); box-shadow
   .builder { top: calc(var(--safe-t) + 8px); bottom: calc(8px + var(--safe-b)); }
   .preview-wrap { height: 96px; }
   .panel-head { padding-top: 10px; }
-  .toast { bottom: calc(76px + var(--safe-b)); }
+  .toast { top: calc(var(--safe-t) + 62px); }
 }
 
 @media (prefers-reduced-motion: reduce) {

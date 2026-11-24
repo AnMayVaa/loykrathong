@@ -580,7 +580,7 @@ export class Scene {
   launchMine(row) {
     const k = this._makeKrathong(row, { mine: true });
     k.x = this.W * 0.5;
-    k.depth = this.mobile ? 0.62 : 0.66;
+    k.depth = this.mobile ? 0.55 : 0.58;
     k.vx = 4 + Math.random() * 4;
     k.vd = -0.009;
     k.born = this.t;
