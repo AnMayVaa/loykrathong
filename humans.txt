@@ -1,0 +1,17 @@
+/* TEAM */
+Creator: พิทักษ์ ปทุมวัน (Pitak "Ohm" Patumwan)
+Role: Design and development
+Study: Computer Engineering, King Mongkut's University of Technology North Bangkok (KMUTNB)
+Site: https://ohmpatumwan.com
+GitHub: https://github.com/AnMayVaa
+LinkedIn: https://www.linkedin.com/in/ohmpatumwan
+Facebook: https://www.facebook.com/Ohm.Patumwan
+Contact: pitakpatumwan14@gmail.com
+
+/* SITE */
+Last update: 2026/11/25
+Language: Thai, English
+Source: https://github.com/AnMayVaa/loykrathong
+Standards: HTML5, CSS3, ES modules, Canvas 2D, Web Audio
+Components: Supabase, Vercel
+Fonts: Charm, Anuphan (SIL Open Font License)

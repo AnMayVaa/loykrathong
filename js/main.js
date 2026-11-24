@@ -28,8 +28,17 @@ const BAD_RE = new RegExp(BAD.map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'
 const mask = (s) => String(s || '').replace(BAD_RE, (m) => '✿'.repeat(Math.min(4, [...m].length)));
 const tidy = (s, n) => String(s || '').replace(/[\u0000-\u001f\u007f‎‏‪-‮⁦-⁩]/g, ' ').replace(/\s+/g, ' ').trim().slice(0, n);
 
+const QS_LANG = (() => {
+  try {
+    const v = new URLSearchParams(location.search).get('lang');
+    return v === 'en' || v === 'th' ? v : null;
+  } catch (_) {
+    return null;
+  }
+})();
+
 const state = {
-  lang: store.get('loy.lang', 'th') === 'en' ? 'en' : 'th',
+  lang: QS_LANG || (store.get('loy.lang', 'th') === 'en' ? 'en' : 'th'),
   style: clampInt(store.get('loy.style', 0), 0, STYLE_COUNT - 1),
   color: clampInt(store.get('loy.color', 0), 0, FLOWER.length - 1),
   online: true,

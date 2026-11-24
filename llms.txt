@@ -1,0 +1,29 @@
+# ลอยกระทงออนไลน์ 2569 (Loy Krathong Online 2026)
+
+> A free website where anyone can float a krathong online for Loy Krathong 2026 (ลอยกระทง 2569). Visitors craft a krathong, write a wish, and float it on one shared animated river with people around the world. No sign-up, no ads, no waste in real rivers. Thai and English.
+
+- Website: https://loykrathong2569.vercel.app/
+- About, how-to and FAQ (Thai + English): https://loykrathong2569.vercel.app/about
+- Source code: https://github.com/AnMayVaa/loykrathong
+- Creator: พิทักษ์ ปทุมวัน (Pitak "Ohm" Patumwan), Computer Engineering student at King Mongkut's University of Technology North Bangkok (KMUTNB)
+
+## Key facts
+
+- Loy Krathong 2026 / ลอยกระทง 2569 falls on Tuesday 24 November 2026 (full moon, 15th waxing day of the 12th Thai lunar month).
+- Five krathong styles: banana leaf (ใบตอง), bread (ขนมปัง), lotus (ดอกบัว), banana trunk (หยวกกล้วย), coconut shell (กะลามะพร้าว); six flower colors.
+- Wishes can be shown to everyone or kept private ("อธิษฐานในใจ": a private wish never leaves the visitor's device).
+- Tap the sky to release a sky lantern (โคมลอย); tap a krathong to read its name and wish.
+- Works on phones, tablets and computers; free; no account needed; no tracking cookies or analytics.
+- Built with HTML5 Canvas and Web Audio, data stored in Supabase, hosted on Vercel.
+
+## ภาษาไทย
+
+เว็บลอยกระทงออนไลน์ 2569 ฟรี ไม่ต้องสมัคร ประดิษฐ์กระทง 5 แบบ เลือกดอกไม้ 6 สี เขียนคำอธิษฐาน แล้วลอยบนสายน้ำเดียวกับทุกคนทั่วโลก แตะท้องฟ้าเพื่อปล่อยโคมลอย แตะกระทงเพื่ออ่านคำอธิษฐาน ลอยกระทงปี 2569 ตรงกับวันอังคารที่ 24 พฤศจิกายน 2569 สร้างโดย พิทักษ์ ปทุมวัน (โอม) นักศึกษาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (มจพ.)
+
+## Contact the creator
+
+- Portfolio: https://ohmpatumwan.com
+- GitHub: https://github.com/AnMayVaa
+- LinkedIn: https://www.linkedin.com/in/ohmpatumwan
+- Facebook: https://www.facebook.com/Ohm.Patumwan
+- Email: pitakpatumwan14@gmail.com

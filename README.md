@@ -3,7 +3,18 @@
 เว็บลอยกระทงออนไลน์สำหรับคืนวันเพ็ญ เดือนสิบสอง (อังคาร 24 พฤศจิกายน 2569)
 ประดิษฐ์กระทง ตั้งจิตอธิษฐาน แล้วลอยบนสายน้ำเดียวกับทุกคนที่เข้ามาในคืนนี้ โดยไม่สร้างขยะในแม่น้ำจริง
 
-**Live:** https://loykrathong2569.vercel.app
+**Live:** https://loykrathong2569.vercel.app · **About / FAQ:** https://loykrathong2569.vercel.app/about
+
+## ผู้สร้าง · Author
+
+**พิทักษ์ ปทุมวัน (โอม)** · Pitak "Ohm" Patumwan
+นักศึกษาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (KMUTNB)
+
+- Portfolio: https://ohmpatumwan.com
+- GitHub: [@AnMayVaa](https://github.com/AnMayVaa)
+- LinkedIn: https://www.linkedin.com/in/ohmpatumwan
+- Facebook: https://www.facebook.com/Ohm.Patumwan
+- Email: pitakpatumwan14@gmail.com
 
 ## Features
 
@@ -44,5 +55,21 @@ js/api.js           เชื่อม Supabase REST
 js/audio.js         เสียงสังเคราะห์
 js/i18n.js          ข้อความไทย/อังกฤษ
 fonts/              Charm, Anuphan (OFL)
+about.html          หน้าเกี่ยวกับ / วิธีใช้ / FAQ / เครดิต (/about)
+robots.txt          อนุญาตทั้ง search engine และ AI crawler
+sitemap.xml         แผนผังเว็บสำหรับ search engine
+llms.txt            สรุปเว็บสำหรับ AI assistant
+humans.txt          เครดิตผู้สร้าง
 vercel.json         headers + CSP
 ```
+
+## SEO
+
+- Title/description ภาษาไทย + อังกฤษ, Open Graph, Twitter card
+- Structured data (JSON-LD): WebSite, WebApplication, SoftwareSourceCode, Person, AboutPage, FAQPage, BreadcrumbList
+- `robots.txt` เปิดให้ทุก crawler รวมถึง AI (GPTBot, ClaudeBot, PerplexityBot, Google-Extended ฯลฯ) + `sitemap.xml` + `llms.txt`
+- แจ้ง Bing/IndexNow อัตโนมัติด้วย key file ที่ root
+
+## License
+
+© 2569 พิทักษ์ ปทุมวัน — ฟอนต์ Charm และ Anuphan ใช้ภายใต้ SIL Open Font License
