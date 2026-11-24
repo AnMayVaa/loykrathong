@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ลอยกระทงออนไลน์ ๒๕๖๙ · Loy Krathong Online</title>
+  <meta name="description" content="ลอยกระทงออนไลน์คืนวันเพ็ญ เดือนสิบสอง ๒๕๖๙ ประดิษฐ์กระทง อธิษฐาน แล้วลอยบนสายน้ำเดียวกับทุกคนทั่วโลก ไม่สร้างขยะในแม่น้ำ">
+  <meta name="theme-color" content="#0b0e2a">
+  <meta name="color-scheme" content="dark">
+  <link rel="canonical" href="https://loykrathong2569.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ลอยกระทงออนไลน์ ๒๕๖๙">
+  <meta property="og:title" content="ลอยกระทงออนไลน์ ๒๕๖๙ 🪷 มาลอยกระทงด้วยกัน">
+  <meta property="og:description" content="ประดิษฐ์กระทง อธิษฐาน แล้วลอยบนสายน้ำเดียวกับทุกคนทั่วโลก คืนวันเพ็ญ ๒๔ พ.ย. ๒๕๖๙">
+  <meta property="og:url" content="https://loykrathong2569.vercel.app/">
+  <meta property="og:image" content="https://loykrathong2569.vercel.app/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="กระทงลอยบนสายน้ำใต้พระจันทร์เต็มดวง">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://loykrathong2569.vercel.app/og.jpg">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="preload" href="/fonts/anuphan-thai-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/charm-thai-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="module" src="/js/main.js"></script>
+</head>
+<body>
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <header class="top">
+    <div class="brand">
+      <h1 id="title"><span data-i18n="titleA">ลอยกระทง</span><span data-i18n="titleB">ออนไลน์</span></h1>
+      <p class="sub"><span class="sub-long" data-i18n="subtitle">คืนวันเพ็ญ เดือนสิบสอง · ๒๔ พฤศจิกายน ๒๕๖๙</span><span class="sub-short" data-i18n="subtitleShort">คืนวันเพ็ญ เดือน ๑๒ · ๒๔ พ.ย. ๒๕๖๙</span></p>
+    </div>
+    <nav class="actions" aria-label="เมนู">
+      <button type="button" class="icon-btn" id="btnLang" aria-label="Switch to English"><span id="langLabel">EN</span></button>
+      <button type="button" class="icon-btn" id="btnSound" aria-label="เปิดเสียง" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path class="spk" d="M4 9v6h4l5 4V5L8 9H4z"/><path class="wave on" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12"/><path class="wave off" d="M16 9l5 6M21 9l-5 6"/></svg>
+      </button>
+      <button type="button" class="icon-btn" id="btnShare" aria-label="ชวนเพื่อน">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>
+      </button>
+      <button type="button" class="icon-btn" id="btnAbout" aria-label="เกี่ยวกับลอยกระทง">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <div class="counter" aria-live="polite">
+    <span class="live-dot" id="liveDot" aria-hidden="true"></span>
+    <span id="count" class="count-text">&nbsp;</span>
+    <span id="liveNote" class="count-note" data-i18n="liveNote">สายน้ำเดียวกันกับทุกคนทั่วโลก</span>
+  </div>
+
+  <div class="cta-wrap">
+    <button type="button" id="openBuilder" class="cta">
+      <span class="cta-lotus" aria-hidden="true">🪷</span>
+      <span data-i18n="floatBtn">ลอยกระทง</span>
+    </button>
+    <p class="hint" data-i18n="hint">แตะท้องฟ้าเพื่อปล่อยโคมลอย · แตะกระทงเพื่ออ่านคำอธิษฐาน</p>
+  </div>
+
+  <!-- Krathong builder -->
+  <div class="overlay" id="builderOverlay" hidden></div>
+  <section class="panel builder" id="builder" role="dialog" aria-modal="true" aria-labelledby="builderTitle" hidden>
+    <div class="panel-head">
+      <h2 id="builderTitle" data-i18n="builderTitle">ประดิษฐ์กระทงของคุณ</h2>
+      <button type="button" class="close-btn" data-close="builder" aria-label="ปิด">×</button>
+    </div>
+    <div class="preview-wrap">
+      <canvas id="preview" aria-hidden="true"></canvas>
+    </div>
+    <form id="builderForm" novalidate autocomplete="off">
+      <fieldset class="field">
+        <legend data-i18n="stepStyle">เลือกแบบกระทง</legend>
+        <div class="styles" id="styles" role="radiogroup"></div>
+      </fieldset>
+      <fieldset class="field">
+        <legend data-i18n="stepFlower">สีดอกไม้</legend>
+        <div class="colors" id="colors" role="radiogroup"></div>
+      </fieldset>
+      <div class="field">
+        <label for="inName" data-i18n="nameLabel">ชื่อของคุณ</label>
+        <input id="inName" name="name" type="text" maxlength="24" enterkeyhint="next" data-i18n-ph="namePh" placeholder="เช่น โอม">
+      </div>
+      <div class="field">
+        <label for="inWish" data-i18n="wishLabel">คำอธิษฐาน</label>
+        <textarea id="inWish" name="wish" rows="3" maxlength="140" data-i18n-ph="wishPh" placeholder="ขอให้..."></textarea>
+        <div class="wish-meta"><span id="wishCount">0/140</span></div>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="inShare" checked>
+        <span class="track" aria-hidden="true"><span class="thumb"></span></span>
+        <span class="switch-text">
+          <span data-i18n="shareToggle">แสดงคำอธิษฐานบนสายน้ำให้ทุกคนเห็น</span>
+          <small id="shareNote" data-i18n="shareOnNote">ทุกคนที่แตะกระทงของคุณจะอ่านคำอธิษฐานได้</small>
+        </span>
+      </label>
+      <button type="submit" class="submit" id="btnFloat"><span data-i18n="submit">ลอยเลย</span> <span aria-hidden="true">🪷</span></button>
+    </form>
+  </section>
+
+  <!-- Krathong card (tap to read) -->
+  <section class="card" id="card" role="dialog" aria-labelledby="cardName" hidden>
+    <button type="button" class="close-btn small" data-close="card" aria-label="ปิด">×</button>
+    <p class="card-kicker" id="cardKicker"></p>
+    <h3 id="cardName"></h3>
+    <p class="card-wish" id="cardWish"></p>
+    <p class="card-meta" id="cardMeta"></p>
+  </section>
+
+  <!-- About -->
+  <div class="overlay" id="aboutOverlay" hidden></div>
+  <section class="panel about" id="about" role="dialog" aria-modal="true" aria-labelledby="aboutTitle" hidden>
+    <div class="panel-head">
+      <h2 id="aboutTitle" data-i18n="aboutTitle">เกี่ยวกับลอยกระทง</h2>
+      <button type="button" class="close-btn" data-close="about" aria-label="ปิด">×</button>
+    </div>
+    <div class="about-body">
+      <p data-i18n="about1"></p>
+      <p data-i18n="about2"></p>
+      <ul class="tips">
+        <li data-i18n="tip1"></li>
+        <li data-i18n="tip2"></li>
+        <li data-i18n="tip3"></li>
+      </ul>
+      <p class="fine" data-i18n="about3"></p>
+    </div>
+  </section>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <noscript><div class="noscript">เว็บนี้ต้องเปิด JavaScript เพื่อลอยกระทงนะ · Please enable JavaScript to float a krathong.</div></noscript>
+</body>
+</html>
