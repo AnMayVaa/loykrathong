@@ -213,7 +213,7 @@ export class Scene {
     this.mx = W * (portrait ? 0.74 : 0.76);
     this.my = Math.max(this.mr + (portrait ? 205 : 150), H * (portrait ? 0.27 : 0.24));
     if (this.my > this.hy - this.mr * 2.2) this.my = this.hy - this.mr * 2.2;
-    this.base = clamp(W * 0.3, 110, 190);
+    this.base = clamp(Math.min(W * 0.3, (H - this.hy) * 0.85), 80, 190);
     this.depthSpan = this.mobile ? 0.76 : 0.86;
     this.maxVisible = Math.round(clamp((W * (H - this.hy)) / 9000, 12, 34) * this.quality);
 
@@ -856,7 +856,7 @@ export class Scene {
 
   _adapt(dt) {
     this.frameTimes.push(dt);
-    if (this.frameTimes.length < 90) return;
+    if (this.frameTimes.length < 60) return;
     const avg = this.frameTimes.reduce((a, b) => a + b, 0) / this.frameTimes.length;
     this.frameTimes.length = 0;
     if (avg > 0.034 && this.quality > 0.55) {
